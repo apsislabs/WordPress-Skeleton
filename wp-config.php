@@ -1,5 +1,5 @@
 <?php
-$webroot = dirname(__DIR__);
+$webroot = dirname(__FILE__);
 
 // ===================================================
 // Load database info and local development parameters
