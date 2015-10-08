@@ -5,6 +5,13 @@
 // =================================================================
 
 // =================================================================
+// Point WordPress at the right directory for the vagrant box
+// =================================================================
+
+define('WP_HOME', "http://" . $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', "http://" . $_SERVER['HTTP_HOST'] . "/wp");
+
+// =================================================================
 // MySQL settings - Pre-configured for included Vagrantfile;
 // changing these can bork your install
 // =================================================================

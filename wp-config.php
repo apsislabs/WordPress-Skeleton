@@ -1,29 +1,28 @@
 <?php
+$webroot = dirname(__DIR__);
+
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
-if ( file_exists( dirname( __FILE__ ) . 'config/local-config.php' ) ) {
+if ( file_exists( dirname( __FILE__ ) . '/config/local-config.php' ) ) {
 	define( 'WP_LOCAL_DEV', true );
-	include( dirname( __FILE__ ) . 'config/local-config.php' );
+	include( dirname( __FILE__ ) . '/config/local-config.php' );
 } else {
-	define( 'WP_LOCAL_DEV', false );
-	define( 'DB_NAME', '%%DB_NAME%%' );
-	define( 'DB_USER', '%%DB_USER%%' );
-	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
-	define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
+	include( dirname(__FILE__) . '/config/remote-config.php');
 }
 
 // ==============================================================
 // Salts, for security
 // Grab these from: https://api.wordpress.org/secret-key/1.1/salt
 // ==============================================================
-include(dirname( __FILE__ ) . 'config/salts.php');
+include(dirname( __FILE__ ) . '/config/salts.php');
 
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+define('CONTENT_DIR', '/content');
+define('WP_CONTENT_DIR', $webroot . CONTENT_DIR);
+define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 
 // ================================================
 // You almost certainly do not want to change these
