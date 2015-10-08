@@ -1,6 +1,14 @@
+.DS_Store
+.vagrant
+
+node_modules/
+
+/content/upgrade/
 /shared
-/local-config.php
+
+config/local-config.php
+config/remote-config.php
+config/salts.php
+
 /sql-dump-*.sql
 /db-sync
-/content/upgrade/
-.DS_Store
