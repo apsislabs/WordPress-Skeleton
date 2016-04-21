@@ -28,5 +28,5 @@ echo "Done."
 
 # Create Shared Directory
 echo "Creating shared uploads directory..."
-mkdir -p shared/uploads
+mkdir -p shared/content/uploads
 echo "Done."
